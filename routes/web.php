@@ -13,7 +13,7 @@
 
 Route::get('/', 'PagesController@init');
 
-Route::get('home', 'PagesController@init');
+Route::get('/home', 'PagesController@init');
 
 Route::get('404', 'PagesController@notFound');
 
@@ -23,7 +23,11 @@ Route::get('cart', 'PagesController@cart');
 
 Route::get('checkout', 'PagesController@checkout');
 
-Route::get('admin', 'AdminController@index');
+Route::prefix('admin')->group(function() {
+	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+	Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+	Route::get('/', 'AdminController@index')->name('admin.dashboard');
+});
 
 Auth::routes(); //Routes : login + register
 
