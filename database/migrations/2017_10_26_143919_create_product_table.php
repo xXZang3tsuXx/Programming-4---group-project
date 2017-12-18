@@ -18,7 +18,8 @@ class CreateProductTable extends Migration
             $table->string('product_name');
             $table->string('product_model');
             $table->string('product_price');
-            $table->rememberToken();
+            $table->string('product_img_url');            
+            $table->string('product_3D_url');           
             $table->timestamps();
         });
     }

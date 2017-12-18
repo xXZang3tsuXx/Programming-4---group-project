@@ -66,6 +66,15 @@ return [
             'sslmode' => 'prefer',
         ],
 
+        'sqlsrv' => array(
+                       'driver' => 'sqlsrv',
+                       'host' => 'sparemart.database.windows.net,1433', // Provide MS SQLServer address here
+                       'database' => 'sparemart',
+                       'username' => 'pasindu',
+                       'password' => '$paremart101',
+                       'prefix' => '',
+                    ),
+
     ],
 
     /*

@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Brand extends Model
 {
+	protected $table = "brand";
+	
+	public function product()
+	{	
+		return $this->belongsTo('App\Product');
+	}
 
 }
+

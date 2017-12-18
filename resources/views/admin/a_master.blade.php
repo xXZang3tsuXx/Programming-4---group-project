@@ -1,37 +1,58 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="{{ app()->getLocale() }}">
 <head>
-<title>@yield('title')</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Gretong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Bootstrap Core CSS -->
-<link href="css/admin/bootstrap.min.css" rel='stylesheet' type='text/css' />
-<!-- Custom CSS -->
-<link href="css/admin/style.css" rel='stylesheet' type='text/css' />
-<!-- Graph CSS -->
-<link href="css/font-awesome.min.css" rel="stylesheet"> 
-<!-- jQuery -->
-<link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/>
-<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<!-- lined-icons -->
-<link rel="stylesheet" href="css/admin/icon-font.min.css" type='text/css' />
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<script src="js/admin/amcharts.js"></script>	
-<script src="js/admin/serial.js"></script>	
-<script src="js/admin/light.js"></script>	
-<!-- //lined-icons -->
-<script src="js/admin/jquery-1.10.2.min.js"></script>
-<script src="js/admin/jquery.nicescroll.js"></script>
-<script src="js/admin/scripts.js"></script>
-<script src="js/admin/bootstrap.min.js"></script>
-<script src="js/admin/menu_jquery.js"></script>
+	<title>@yield('title')</title>
 
-<script language="javascript" type="text/javascript" src="js/admin/jquery.flot.js"></script>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="{{ asset('css/admin/bootstrap.min.css') }}" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="{{ asset('css/admin/animate.min.css') }}" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="{{ asset('css/admin/light-bootstrap-dashboard.css?v=1.4.0') }}" rel="stylesheet"/>
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="{{ asset('css/admin/pe-icon-7-stroke.css') }}" rel="stylesheet" />
+
+</head>
 
 <body>
-	
-	@include('admin.a_shared.a_sidebar')	
+	@include('admin.a_shared.a_sidebar')
 </body>
+
+
+	<!--   Core JS Files   -->
+    <script src="{{ asset('js/admin/jquery.3.2.1.min.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('js/admin/bootstrap.min.js') }}" type="text/javascript"></script>
+
+	<!--  Charts Plugin -->
+	<script src="{{ asset('js/admin/chartist.min.js') }}"></script>
+
+	<!--  Notifications Plugin    -->
+    <script src="{{ asset('js/admin/bootstrap-notify.js') }}"></script>
+
+    <script src="{{ asset('js/admin/light-bootstrap-dashboard.js?v=1.4.0') }}"></script>
+
+    <script src="{{ asset('js/admin/demo.js') }}"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8_ej3ip8jBlN7N0X8YIRsrUBGa2-52OY"></script>
+
+    <script>
+        $().ready(function(){
+            demo.initGoogleMaps();
+        });
+    </script>
+
+</html>
